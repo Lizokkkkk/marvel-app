@@ -43,7 +43,7 @@ class CharList extends Component {
             }
 
             return (
-                <li className="char__item" key={item.id}>
+                <li className="char__item" key={item.id} onClick={() => this.props.onCharSelected(item.id)}>
                     <img src={item.thumbnail} alt={item.name} style={imgStyle}/>
                     <div className="char__name">{item.name}</div>
                 </li>
@@ -70,7 +70,7 @@ class CharList extends Component {
         return (
             <div className="char__list">
                 {errorMessage}
-                {loading}
+                {spinner}
                 {content}
                 <button className="button button__main button__long">
                     <div className="inner">load more</div>
